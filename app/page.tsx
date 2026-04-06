@@ -93,14 +93,13 @@ export default function HomePage() {
               {/* Main Image Frame */}
               <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-gradient-to-b from-white/10 to-transparent p-[1px] group-hover:border-orange-500/30 transition-all duration-500">
                 <div className="absolute inset-0 bg-black/40 z-10 opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
-                <div className="relative h-full w-full rounded-[1.95rem] overflow-hidden bg-zinc-900">
+                <div className="relative h-full w-full rounded-[1.95rem] overflow-hidden bg-transparent">
                   <Image
                     src="/hero-premium.jpeg"
                     alt="Sonu Das - Educator & Innovator"
+                    fill
                     priority
-                    width={800}
-                    height={1000}
-                    className="h-full w-full object-cover object-top scale-105 group-hover:scale-100 transition-transform duration-700"
+                    className="object-cover object-top scale-105 group-hover:scale-100 transition-transform duration-700"
                   />
                   
                   {/* Decorative Overlays */}

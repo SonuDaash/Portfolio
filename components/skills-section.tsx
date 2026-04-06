@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Users, ClipboardList, Laptop, Smile, Check } from "lucide-react"
+import { Users, ClipboardList, Laptop, Smile, Check, Sparkles } from "lucide-react"
 
 const skillCategories = [
   {
@@ -17,9 +17,9 @@ const skillCategories = [
     delay: 0.2,
   },
   {
-    title: "Technology Skills",
-    icon: <Laptop className="h-6 w-6" />,
-    skills: ["MS Office proficiency", "WordPress management", "Social media management", "Basic graphic design"],
+    title: "Technology & Creative",
+    icon: <Sparkles className="h-6 w-6" />,
+    skills: ["Canva & Content Creation", "Graphic Designing (Branding)", "Basic Video Editing (Reels)", "AI Integration & Vibe Coding"],
     delay: 0.3,
   },
   {

@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ChevronDown, FileText, Building2, Cpu, GraduationCap, LayoutGrid, Globe, ExternalLink } from "lucide-react"
+import { ChevronDown, FileText, Building2, Cpu, GraduationCap, LayoutGrid, Globe, ExternalLink, Palette, PenTool, Video, Sparkles, Zap } from "lucide-react"
 import Image from "next/image"
 import PDFViewer from "@/components/pdf-viewer"
 import WorkExperience from "@/components/work-experience"
@@ -50,8 +50,8 @@ export default function HomePage() {
               </h2>
 
               <p className="text-lg text-muted-foreground max-w-xl">
-                Specializing in school administration, coordination, computer science teaching, and technology
-                integration to create innovative learning environments.
+                Specializing in school administration, coordination, computer science teaching, and
+                <span className="text-orange-500 font-medium"> Vibe Coding</span> to create innovative learning environments.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
@@ -184,9 +184,9 @@ export default function HomePage() {
                 delay: 0.1,
               },
               {
-                title: "Technology Integration",
-                description: "Implementing cutting-edge technology solutions to enhance the learning experience",
-                icon: <Cpu className="h-6 w-6" />,
+                title: "Canva & Content Creation",
+                description: "Designing high-impact educational and promotional content with Canva's modern toolset",
+                icon: <Palette className="h-6 w-6" />,
                 delay: 0.2,
               },
               {
@@ -196,10 +196,40 @@ export default function HomePage() {
                 delay: 0.3,
               },
               {
+                title: "AI Integration",
+                description: "Implementing AI-driven automation to maximize institutional productivity and workflow",
+                icon: <Sparkles className="h-6 w-6" />,
+                delay: 0.4,
+              },
+              {
+                title: "Graphic Designing",
+                description: "Professional branding and social media assets tailored for school identity",
+                icon: <PenTool className="h-6 w-6" />,
+                delay: 0.5,
+              },
+              {
                 title: "Digital Transformation",
                 description: "Leading schools through the digital age with strategic technology adoption",
                 icon: <LayoutGrid className="h-6 w-6" />,
-                delay: 0.4,
+                delay: 0.6,
+              },
+              {
+                title: "Video Editing",
+                description: "Editing engaging Reels, Shorts, and school content for better digital presence",
+                icon: <Video className="h-6 w-6" />,
+                delay: 0.7,
+              },
+              {
+                title: "Technology Integration",
+                description: "Implementing cutting-edge technology solutions to enhance the learning experience",
+                icon: <Cpu className="h-6 w-6" />,
+                delay: 0.8,
+              },
+              {
+                title: "Vibe Coder",
+                description: "Building software at the speed of thought using AI and natural language instructions",
+                icon: <Zap className="h-6 w-6" />,
+                delay: 0.9,
               },
             ].map((skill, index) => (
               <motion.div

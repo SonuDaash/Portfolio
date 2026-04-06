@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, BookOpen, Briefcase, GraduationCap, Globe, ExternalLink, Building2 } from "lucide-react"
+import { ArrowRight, BookOpen, Briefcase, GraduationCap, Globe, ExternalLink, Building2, ShoppingBag } from "lucide-react"
 
 export default function ServicesPage() {
   return (
@@ -298,7 +298,7 @@ export default function ServicesPage() {
               <div className="relative p-8 rounded-3xl border border-white/10 bg-zinc-900/50 backdrop-blur-xl hover:border-orange-500/40 transition-all duration-500 flex flex-col h-full shadow-2xl">
                 <div className="flex justify-between items-start mb-6">
                   <div className="p-3 rounded-2xl bg-orange-500/10 text-orange-400 border border-orange-500/20">
-                    <Building2 className="h-8 w-8" />
+                    <ShoppingBag className="h-8 w-8" />
                   </div>
                   <Button variant="ghost" size="icon" asChild className="text-white/40 hover:text-orange-500">
                     <a href="https://vayanak.com/" target="_blank" rel="noopener noreferrer">
@@ -306,14 +306,14 @@ export default function ServicesPage() {
                     </a>
                   </Button>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors">Vayanak Business</h3>
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors">Vayanak Clothing</h3>
                 <p className="text-white/60 mb-8 flex-grow leading-relaxed">
-                  A powerful financial and business management engine designed to automate transaction tracking, 
-                  goal management, and strategic productivity for businesses.
+                  A high-end streetwear brand dedicated to premium quality and original printed t-shirts, 
+                  blending modern aesthetics with exceptional craftsmanship for a digital-first audience.
                 </p>
                 <Button asChild className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold tracking-wide">
                   <a href="https://vayanak.com/" target="_blank" rel="noopener noreferrer">
-                    Live Preview
+                    Shop Now
                     <Globe className="ml-2 h-4 w-4" />
                   </a>
                 </Button>

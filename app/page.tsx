@@ -8,6 +8,8 @@ import Image from "next/image"
 import PDFViewer from "@/components/pdf-viewer"
 import WorkExperience from "@/components/work-experience"
 import SkillsSection from "@/components/skills-section"
+import DownloadResumeButton from "@/components/download-resume-button"
+import ResumeContent from "@/components/resume-content"
 
 export default function HomePage() {
   return (
@@ -60,11 +62,17 @@ export default function HomePage() {
                   </Button>
                 </PDFViewer>
 
+                <DownloadResumeButton
+                  variant="outline"
+                  size="lg"
+                  className="border-orange-500/20 hover:bg-orange-500/10 hover:text-orange-500 border-2"
+                />
+
                 <Button
                   asChild
                   size="lg"
-                  variant="outline"
-                  className="border-orange-500/20 hover:bg-orange-500/10 hover:text-orange-500"
+                  variant="ghost"
+                  className="hover:bg-orange-500/10 hover:text-orange-500"
                 >
                   <Link href="/contact">Contact Me</Link>
                 </Button>
@@ -188,6 +196,13 @@ export default function HomePage() {
 
       {/* Work Experience Section */}
       <WorkExperience />
+      
+      {/* Hidden Resume Content just for PDF capture */}
+      <div className="hidden pointer-events-none absolute left-[-9999px] top-0 overflow-hidden" aria-hidden="true">
+        <div id="resume-download-source" className="bg-white p-0 m-0">
+          <ResumeContent />
+        </div>
+      </div>
     </>
   )
 }

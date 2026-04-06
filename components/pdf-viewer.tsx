@@ -5,7 +5,7 @@ import type React from "react"
 import { useState, useEffect, useRef } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
-import { Download, FileText, X, ZoomIn, ZoomOut, RotateCw, Printer } from "lucide-react"
+import { Download, FileText, X, ZoomIn, ZoomOut, RotateCw, Printer, Loader2 } from "lucide-react"
 import ResumeContent from "./resume-content"
 
 interface PDFViewerProps {
@@ -16,6 +16,7 @@ interface PDFViewerProps {
 export default function PDFViewer({ children, title }: PDFViewerProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [zoom, setZoom] = useState(100)
+  const [isDownloading, setIsDownloading] = useState(false)
   const contentRef = useRef<HTMLDivElement>(null)
 
   // Reset zoom when dialog opens/closes
@@ -33,11 +34,11 @@ export default function PDFViewer({ children, title }: PDFViewerProps) {
   }, [isOpen])
 
   const handleZoomIn = () => {
-    setZoom((prev) => Math.min(prev + 25, 200))
+    setZoom((prev: number) => Math.min(prev + 25, 200))
   }
 
   const handleZoomOut = () => {
-    setZoom((prev) => Math.max(prev - 25, 50))
+    setZoom((prev: number) => Math.max(prev - 25, 50))
   }
 
   const handleReset = () => {
@@ -52,9 +53,57 @@ export default function PDFViewer({ children, title }: PDFViewerProps) {
     window.print()
   }
 
-  const handleDownload = () => {
-    // In a real implementation, this would generate and download a PDF
-    alert("In a production environment, this would download the resume as a PDF file.")
+  const handleDownload = async () => {
+    if (isDownloading) return
+
+    setIsDownloading(true)
+    const prevZoom = zoom
+    
+    // Temporarily reset zoom to 100% for proper PDF generation
+    setZoom(100)
+    
+    // Wait for the DOM to update to un-zoomed state
+    await new Promise((resolve) => setTimeout(resolve, 300))
+
+    try {
+      // Create a temporary script element to load html2pdf
+      const script = document.createElement("script")
+      script.src = "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+
+      const loadScript = new Promise((resolve, reject) => {
+        script.onload = resolve
+        script.onerror = reject
+      })
+
+      document.body.appendChild(script)
+      await loadScript
+
+      if (contentRef.current) {
+        // Find the paper element to print
+        const element = contentRef.current.querySelector(".bg-white")
+
+        if (element && typeof window !== "undefined" && (window as any).html2pdf) {
+          const opt = {
+            margin: 0,
+            filename: "Sonu_Das_Resume.pdf",
+            image: { type: "jpeg", quality: 1 },
+            html2canvas: { scale: 2, useCORS: true },
+            jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+          }
+
+          await (window as any).html2pdf().set(opt).from(element).save()
+        }
+      }
+
+      // Cleanup script
+      document.body.removeChild(script)
+    } catch (error) {
+      console.error("Error generating PDF:", error)
+      alert("Failed to generate PDF. Please try printing instead.")
+    } finally {
+      setZoom(prevZoom)
+      setIsDownloading(false)
+    }
   }
 
   return (
@@ -112,11 +161,21 @@ export default function PDFViewer({ children, title }: PDFViewerProps) {
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-gray-300 hover:text-white hover:bg-white/10 h-9"
+                className="text-gray-300 hover:text-white hover:bg-white/10 h-9 relative"
                 onClick={handleDownload}
+                disabled={isDownloading}
               >
-                <Download className="h-4 w-4 mr-2 text-orange-500" />
-                Download
+                {isDownloading ? (
+                  <>
+                    <Loader2 className="h-4 w-4 mr-2 text-orange-500 animate-spin" />
+                    Preparing PDF...
+                  </>
+                ) : (
+                  <>
+                    <Download className="h-4 w-4 mr-2 text-orange-500" />
+                    Download
+                  </>
+                )}
               </Button>
               <Button
                 variant="ghost"

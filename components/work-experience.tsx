@@ -5,6 +5,7 @@ import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
+import DownloadResumeButton from "./download-resume-button"
 
 const workExperiences = [
   {
@@ -145,9 +146,12 @@ export default function WorkExperience() {
             Interested in discussing educational leadership opportunities or collaborating on educational technology
             integration?
           </p>
-          <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white">
-            <Link href="/contact">Get in Touch</Link>
-          </Button>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
+              <Link href="/contact">Get in Touch</Link>
+            </Button>
+            <DownloadResumeButton variant="outline" size="lg" className="border-orange-500/20 hover:bg-orange-500/10 hover:text-orange-500 border-2" />
+          </div>
         </motion.div>
       </div>
     </section>

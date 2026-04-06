@@ -10,40 +10,64 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-20 pb-16 md:pt-24 md:pb-20">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1739376023133-bu7bsSGVqwZXBMp9oPmLFB9d27QHEz.jpeg"
-            alt="Sonu Das at Royal Academy Annual Function"
+            src="/service.jpeg"
+            alt="Services Hero"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center scale-105"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black/60" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,107,0,0.15),transparent_70%)]" />
+          {/* Advanced Premium Overlays */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-background/90 z-10" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(249,115,22,0.15),transparent_50%)] z-10" />
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-20" />
         </div>
 
-        <div className="container relative z-10">
+        <div className="container relative z-20">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto text-center space-y-6 pt-32 md:pt-40"
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="max-w-4xl mx-auto text-center space-y-8 pt-20"
           >
-            <div className="inline-block px-4 py-1.5 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-400 text-sm font-medium mb-2">
-              Educator & Innovator
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              My{" "}
-              <span className="bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent">
-                Services
-              </span>
-            </h1>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-sm font-semibold mb-2 backdrop-blur-md shadow-[0_0_20px_rgba(249,115,22,0.1)]"
+            >
+              <div className="h-1.5 w-1.5 rounded-full bg-orange-500 animate-pulse" />
+              Expert Solutions
+            </motion.div>
 
-            <p className="text-lg text-white/80">
-              Comprehensive solutions for educational institutions looking to enhance their administrative processes and
-              technology integration.
-            </p>
+            <div className="space-y-4">
+              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white">
+                Our{" "}
+                <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-orange-600 bg-clip-text text-transparent px-2">
+                  Specialized
+                </span>
+                <br />
+                Services
+              </h1>
+
+              <p className="text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
+                Elevating educational standards through strategic leadership, 
+                cutting-edge technology integration, and future-ready computer science curricula.
+              </p>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8 }}
+              className="flex justify-center gap-4"
+            >
+              <div className="h-1 w-12 rounded-full bg-orange-500/50" />
+              <div className="h-1 w-4 rounded-full bg-orange-500/20" />
+              <div className="h-1 w-4 rounded-full bg-orange-500/20" />
+            </motion.div>
           </motion.div>
         </div>
       </section>

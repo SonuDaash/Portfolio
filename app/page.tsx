@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ChevronDown, FileText, Building2, Cpu, GraduationCap, LayoutGrid } from "lucide-react"
+import { ChevronDown, FileText, Building2, Cpu, GraduationCap, LayoutGrid, Globe, ExternalLink } from "lucide-react"
 import Image from "next/image"
 import PDFViewer from "@/components/pdf-viewer"
 import WorkExperience from "@/components/work-experience"
@@ -61,6 +61,13 @@ export default function HomePage() {
                     <FileText className="ml-2 h-4 w-4" />
                   </Button>
                 </PDFViewer>
+
+                <Button asChild size="lg" variant="outline" className="border-orange-500/20 hover:bg-orange-500/10 hover:text-orange-500 border-2">
+                  <Link href="/services">
+                    View Projects
+                    <Globe className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
 
                 <DownloadResumeButton
                   variant="outline"

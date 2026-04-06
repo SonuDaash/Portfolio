@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, BookOpen, Briefcase, GraduationCap, LayoutGrid } from "lucide-react"
+import { ArrowRight, BookOpen, Briefcase, GraduationCap, Globe, ExternalLink, Building2 } from "lucide-react"
 
 export default function ServicesPage() {
   return (
@@ -44,12 +44,10 @@ export default function ServicesPage() {
 
             <div className="space-y-6">
               <h1 className="text-6xl md:text-8xl font-black tracking-tight text-white drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]">
-                Our{" "}
+                My{" "}
                 <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-orange-600 bg-clip-text text-transparent px-2">
-                  Specialized
+                  Services
                 </span>
-                <br />
-                Expertise
               </h1>
 
               <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light backdrop-blur-[2px]">
@@ -182,53 +180,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-12 md:py-20">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="space-y-8 text-center flex flex-col items-center"
-            >
-              <div className="inline-block p-4 rounded-2xl bg-orange-500/10 text-orange-500 border border-orange-500/20">
-                <LayoutGrid className="h-10 w-10" />
-              </div>
-
-              <div className="space-y-4">
-                <h2 className="text-3xl md:text-4xl font-bold">Technology Integration</h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-center">
-                  Seamlessly integrate technology into your educational environment to enhance teaching and learning
-                  experiences.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left w-full max-w-2xl">
-                {[
-                  "Educational technology assessment and planning",
-                  "Digital tool selection and implementation",
-                  "Learning management system setup",
-                  "Teacher technology training and support",
-                  "Technology infrastructure planning",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center p-3 rounded-lg bg-white/5 border border-white/10">
-                    <div className="mr-3 h-2 w-2 rounded-full bg-orange-500 shrink-0" />
-                    <span className="text-sm md:text-base">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white mt-4 px-8">
-                <Link href="/contact">
-                  Learn More
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       <section className="py-12 md:py-20 bg-black/50">
         <div className="container">
@@ -276,6 +227,101 @@ export default function ServicesPage() {
             </motion.div>
           </div>
         </div>
+      </section>
+
+      {/* Project Showcase Section */}
+      <section className="py-20 bg-black/30 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16 space-y-4"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold text-white">
+              Deployed{" "}
+              <span className="bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent">
+                Solutions
+              </span>
+            </h2>
+            <p className="text-white/60 max-w-2xl mx-auto">
+              Real-world implementations of educational and financial technology systems currently serving institutions.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+            {/* Project 1: Royal Academy */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="group relative"
+            >
+              <div className="absolute -inset-2 bg-gradient-to-br from-orange-500/20 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative p-8 rounded-3xl border border-white/10 bg-zinc-900/50 backdrop-blur-xl hover:border-orange-500/40 transition-all duration-500 flex flex-col h-full shadow-2xl">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="p-3 rounded-2xl bg-orange-500/10 text-orange-400 border border-orange-500/20">
+                    <GraduationCap className="h-8 w-8" />
+                  </div>
+                  <Button variant="ghost" size="icon" asChild className="text-white/40 hover:text-orange-500">
+                    <a href="https://royalacademy.edu.np/" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-5 w-5" />
+                    </a>
+                  </Button>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors">Royal Academy</h3>
+                <p className="text-white/60 mb-8 flex-grow leading-relaxed">
+                  A comprehensive educational platform for Royal Academy, streamlining administration, student records, 
+                  and digital learning resources for a modern academic environment.
+                </p>
+                <Button asChild className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold tracking-wide">
+                  <a href="https://royalacademy.edu.np/" target="_blank" rel="noopener noreferrer">
+                    Live Preview
+                    <Globe className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+            </motion.div>
+
+            {/* Project 2: Vayanak */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="group relative"
+            >
+              <div className="absolute -inset-2 bg-gradient-to-br from-orange-500/20 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative p-8 rounded-3xl border border-white/10 bg-zinc-900/50 backdrop-blur-xl hover:border-orange-500/40 transition-all duration-500 flex flex-col h-full shadow-2xl">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="p-3 rounded-2xl bg-orange-500/10 text-orange-400 border border-orange-500/20">
+                    <Building2 className="h-8 w-8" />
+                  </div>
+                  <Button variant="ghost" size="icon" asChild className="text-white/40 hover:text-orange-500">
+                    <a href="https://vayanak.com/" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-5 w-5" />
+                    </a>
+                  </Button>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors">Vayanak Business</h3>
+                <p className="text-white/60 mb-8 flex-grow leading-relaxed">
+                  A powerful financial and business management engine designed to automate transaction tracking, 
+                  goal management, and strategic productivity for businesses.
+                </p>
+                <Button asChild className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold tracking-wide">
+                  <a href="https://vayanak.com/" target="_blank" rel="noopener noreferrer">
+                    Live Preview
+                    <Globe className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+        <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
       </section>
 
       {/* Service Process */}

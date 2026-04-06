@@ -80,28 +80,57 @@ export default function HomePage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative aspect-square max-w-md mx-auto lg:ml-auto"
+              className="relative group max-w-lg mx-auto lg:ml-auto w-full"
             >
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-orange-500/40 to-orange-400/10 blur-[80px] animate-pulse duration-3000" />
-              <div className="relative h-full w-full rounded-full overflow-hidden border border-orange-500/30 p-2 shadow-[0_0_40px_rgba(249,115,22,0.2)] bg-black/20 backdrop-blur-xl">
-                <div className="h-full w-full rounded-full overflow-hidden border border-white/5 bg-black/50">
+              {/* Premium Decorative Elements */}
+              <div className="absolute -inset-1 bg-gradient-to-tr from-orange-500/30 to-orange-400/0 rounded-[2rem] blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-70" />
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-orange-500/10 rounded-full blur-[60px]" />
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-orange-950/20 rounded-full blur-[80px]" />
+              
+              {/* Main Image Frame */}
+              <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-gradient-to-b from-white/10 to-transparent p-[1px] group-hover:border-orange-500/30 transition-all duration-500">
+                <div className="absolute inset-0 bg-black/40 z-10 opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
+                <div className="relative h-full w-full rounded-[1.95rem] overflow-hidden bg-zinc-900">
                   <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/448510476_3677541605832872_6947636997227695633_n.jpg-k7ADr4fJAvVKDZaOXKKHimIq75PC5G.jpeg"
-                    alt="Sonu Das"
-                    width={500}
-                    height={500}
-                    className="h-full w-full object-cover object-center"
+                    src="/hero-premium.jpg"
+                    alt="Sonu Das - Educator & Innovator"
+                    priority
+                    width={800}
+                    height={1000}
+                    className="h-full w-full object-cover object-top scale-105 group-hover:scale-100 transition-transform duration-700"
                   />
+                  
+                  {/* Decorative Overlays */}
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-20" />
                 </div>
               </div>
-              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
-                <div className="bg-gradient-to-r from-orange-600 to-orange-500 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg border-2 border-orange-500/20 flex items-center gap-1">
-                  <span className="text-xs">7+ YEARS EXPERIENCE</span>
-                </div>
+
+              {/* Floating Experience Badge */}
+              <div className="absolute -bottom-6 -right-6 md:-right-10">
+                <motion.div 
+                  initial={{ rotate: 10, scale: 0.8 }}
+                  animate={{ rotate: 0, scale: 1 }}
+                  transition={{ delay: 1, type: "spring", stiffness: 100 }}
+                  className="bg-black/80 backdrop-blur-xl border border-orange-500/30 rounded-2xl p-4 shadow-2xl space-y-1 ring-1 ring-white/10"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="h-2 w-2 rounded-full bg-orange-500 animate-pulse" />
+                    <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-orange-400">Professional Record</span>
+                  </div>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-3xl font-black text-white">7+</span>
+                    <span className="text-sm font-semibold text-white/70 italic">years</span>
+                  </div>
+                  <p className="text-[10px] text-white/50 leading-tight">Educational Leadership &<br />Technology Innovation</p>
+                </motion.div>
               </div>
+
+              {/* Aesthetic Floating Line Elements */}
+              <div className="absolute -left-6 top-1/4 h-1/2 w-[1px] bg-gradient-to-b from-transparent via-orange-500/40 to-transparent hidden md:block" />
+              <div className="absolute -top-6 left-1/4 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-orange-500/40 to-transparent hidden md:block" />
             </motion.div>
           </div>
         </div>

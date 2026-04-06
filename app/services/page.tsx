@@ -13,7 +13,7 @@ export default function ServicesPage() {
       <section className="relative pt-20 pb-16 md:pt-24 md:pb-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1739376023133-bu7bsSGVqwZXBMp9oPmLFB9d27QHEz.jpeg"
+            src="hero-premimum.jpeg"
             alt="Sonu Das at Royal Academy Annual Function"
             fill
             className="object-cover object-center"

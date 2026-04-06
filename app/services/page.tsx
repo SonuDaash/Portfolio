@@ -32,15 +32,7 @@ export default function ServicesPage() {
             transition={{ duration: 1, ease: "easeOut" }}
             className="max-w-5xl mx-auto text-center space-y-10"
           >
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-sm font-bold tracking-widest uppercase backdrop-blur-xl shadow-[0_0_40px_rgba(249,115,22,0.15)] ring-1 ring-white/10"
-            >
-              <div className="h-2 w-2 rounded-full bg-orange-500 shadow-[0_0_10px_#f97316] animate-pulse" />
-              Strategic Implementation
-            </motion.div>
+
 
             <div className="space-y-6">
               <h1 className="text-6xl md:text-8xl font-black tracking-tight text-white drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]">
@@ -55,21 +47,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.2 }}
-              className="pt-12"
-            >
-              <div className="flex justify-center flex-col items-center gap-4">
-                <span className="text-xs uppercase tracking-[0.4em] font-bold text-orange-500/60 pb-2">Experience the Excellence</span>
-                <div className="flex gap-4">
-                  <div className="h-1.5 w-16 rounded-full bg-orange-500" />
-                  <div className="h-1.5 w-6 rounded-full bg-orange-500/30" />
-                  <div className="h-1.5 w-6 rounded-full bg-orange-500/10" />
-                </div>
-              </div>
-            </motion.div>
+
           </motion.div>
         </div>
 

@@ -9,8 +9,8 @@ import { ArrowRight, BookOpen, Briefcase, GraduationCap, LayoutGrid } from "luci
 export default function ServicesPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Full Screen */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/service.jpeg"
@@ -19,56 +19,69 @@ export default function ServicesPage() {
             className="object-cover object-center scale-105"
             priority
           />
-          {/* Advanced Premium Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-background/90 z-10" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(249,115,22,0.15),transparent_50%)] z-10" />
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-20" />
+          {/* Refined Overlays for Full Image Visibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background/95 z-10" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(249,115,22,0.1),transparent_70%)] z-10" />
+          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-background via-background/80 to-transparent z-20" />
         </div>
 
         <div className="container relative z-20">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-4xl mx-auto text-center space-y-8 pt-20"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="max-w-5xl mx-auto text-center space-y-10"
           >
             <motion.div 
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-sm font-semibold mb-2 backdrop-blur-md shadow-[0_0_20px_rgba(249,115,22,0.1)]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-sm font-bold tracking-widest uppercase backdrop-blur-xl shadow-[0_0_40px_rgba(249,115,22,0.15)] ring-1 ring-white/10"
             >
-              <div className="h-1.5 w-1.5 rounded-full bg-orange-500 animate-pulse" />
-              Expert Solutions
+              <div className="h-2 w-2 rounded-full bg-orange-500 shadow-[0_0_10px_#f97316] animate-pulse" />
+              Strategic Implementation
             </motion.div>
 
-            <div className="space-y-4">
-              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white">
+            <div className="space-y-6">
+              <h1 className="text-6xl md:text-8xl font-black tracking-tight text-white drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]">
                 Our{" "}
                 <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-orange-600 bg-clip-text text-transparent px-2">
                   Specialized
                 </span>
                 <br />
-                Services
+                Expertise
               </h1>
 
-              <p className="text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
-                Elevating educational standards through strategic leadership, 
-                cutting-edge technology integration, and future-ready computer science curricula.
+              <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light backdrop-blur-[2px]">
+                Comprehensive coordination, administration, and technical leadership designed for the modern educational landscape.
               </p>
             </div>
 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-              className="flex justify-center gap-4"
+              transition={{ delay: 1.2 }}
+              className="pt-12"
             >
-              <div className="h-1 w-12 rounded-full bg-orange-500/50" />
-              <div className="h-1 w-4 rounded-full bg-orange-500/20" />
-              <div className="h-1 w-4 rounded-full bg-orange-500/20" />
+              <div className="flex justify-center flex-col items-center gap-4">
+                <span className="text-xs uppercase tracking-[0.4em] font-bold text-orange-500/60 pb-2">Experience the Excellence</span>
+                <div className="flex gap-4">
+                  <div className="h-1.5 w-16 rounded-full bg-orange-500" />
+                  <div className="h-1.5 w-6 rounded-full bg-orange-500/30" />
+                  <div className="h-1.5 w-6 rounded-full bg-orange-500/10" />
+                </div>
+              </div>
             </motion.div>
           </motion.div>
+        </div>
+
+        {/* Cinematic Bottom Gradient Overlay */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+           <motion.div 
+             animate={{ y: [0, 8, 0] }} 
+             transition={{ repeat: Infinity, duration: 2 }}
+             className="w-1 h-12 rounded-full bg-gradient-to-b from-orange-500/60 to-transparent"
+           />
         </div>
       </section>
 

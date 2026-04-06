@@ -95,7 +95,7 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-black/40 z-10 opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
                 <div className="relative h-full w-full rounded-[1.95rem] overflow-hidden bg-zinc-900">
                   <Image
-                    src="/hero-premium.jpg"
+                    src="/hero-premium.jpeg"
                     alt="Sonu Das - Educator & Innovator"
                     priority
                     width={800}

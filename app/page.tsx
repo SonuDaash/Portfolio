@@ -46,12 +46,12 @@ export default function HomePage() {
               </h1>
 
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground">
-                Transforming Education Through Technology & Leadership
+                Accomplished Educational Leader Overseeing School Operations, Faculty Development & Academic Excellence
               </h2>
 
               <p className="text-lg text-muted-foreground max-w-xl">
                 Specializing in school administration, coordination, computer science teaching, and
-                <span className="text-orange-500 font-medium"> Vibe Coding</span> to create innovative learning environments.
+                <span className="text-orange-500 font-medium"> technology integration</span> to create innovative learning environments.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
@@ -127,7 +127,7 @@ export default function HomePage() {
                     <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-orange-400">Professional Record</span>
                   </div>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-black text-white">7+</span>
+                    <span className="text-3xl font-black text-white">9+</span>
                     <span className="text-sm font-semibold text-white/70 italic">years</span>
                   </div>
                   <p className="text-[10px] text-white/50 leading-tight">Educational Leadership &<br />Technology Innovation</p>
@@ -208,8 +208,8 @@ export default function HomePage() {
                 delay: 0.5,
               },
               {
-                title: "Digital Transformation",
-                description: "Leading schools through the digital age with strategic technology adoption",
+                title: "Faculty Development",
+                description: "Training and mentoring teachers to adopt best practices and achieve professional growth",
                 icon: <LayoutGrid className="h-6 w-6" />,
                 delay: 0.6,
               },
@@ -226,8 +226,8 @@ export default function HomePage() {
                 delay: 0.8,
               },
               {
-                title: "Vibe Coder",
-                description: "Building software at the speed of thought using AI and natural language instructions",
+                title: "Academic Excellence",
+                description: "Driving curriculum innovation and student achievement through data-driven strategies",
                 icon: <Zap className="h-6 w-6" />,
                 delay: 0.9,
               },

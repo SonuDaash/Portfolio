@@ -19,7 +19,7 @@ const skillCategories = [
   {
     title: "Technology & Creative",
     icon: <Sparkles className="h-6 w-6" />,
-    skills: ["Canva & Content Creation", "Graphic Designing (Branding)", "Basic Video Editing (Reels)", "AI Integration & Vibe Coding"],
+    skills: ["Canva & Content Creation", "Graphic Designing (Branding)", "Basic Video Editing (Reels)", "AI Integration & Automation"],
     delay: 0.3,
   },
   {
